@@ -5,6 +5,9 @@
 template <typename T>
 void print(std::stack<T>);
 
+template <typename T>
+void print(T);
+
 int main()
 {
 
@@ -28,7 +31,14 @@ void print(std::stack<T> stack)
 {
     while (!stack.empty())
     {
-        std::cout << stack.top() << std::endl;
+        print(stack.top());
         stack.pop();
     }
 }
+
+template <typename T>
+void print(T a)
+{
+    std::cout << a << std::endl;
+}
+
